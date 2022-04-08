@@ -1,0 +1,53 @@
+{
+  "name": "console-messenger-evolution",
+  "version": "1.0.0",
+  "description": "Sneaky chat app",
+  "main": "src/main.js",
+  "author": "Barney Rubble <b@rubble.com> (http://barnyrubble.tumblr.com/)",
+  "scripts": {
+    "start": "electron-forge start src",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.3",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "^18.0.2"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "console_mesenger_evolution"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
